@@ -1,0 +1,33 @@
+---
+import NavbarMenu from "./navbar-menu";
+import menu from "../configs/menus";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-10">
+  <div class="container mx-auto flex items-center h-16 justify-between p-8 md:p-0">
+    <a href="/">
+      <img src="/spay.svg" alt="SPay" />
+    </a>
+    <ul class="space-x-8 hidden md:flex items-center">
+      {
+        menu
+          .filter((item) => item.type !== "separator")
+          .map((item) => (
+            <li
+              class:list={[
+                "hover:text-primary cursor-pointer",
+                { "text-primary": currentPath === item.url?.slice(1) },
+                { "bg-orange-600 rounded-full px-4 py-2 text-white": item.type === "button" },
+              ]}
+            >
+              <a href={item.url}>{item.title}</a>
+            </li>
+          ))
+      }
+    </ul>
+    <NavbarMenu menus={menu} client:load />
+  </div>
+</nav>

@@ -1,0 +1,78 @@
+---
+import footer from "../configs/footer";
+---
+
+<footer class="border-t border-gray-200 py-4">
+  <div class="container mx-auto p-8 space-y-8">
+    <div class="flex justify-between flex-col-reverse md:flex-row">
+      <div class="space-y-8">
+        <img src={footer.logo} alt="logo" class="w-24 hidden md:block" />
+        <div class="space-y-2">
+          <div>Follow us</div>
+          <div class="flex space-x-4">
+            {
+              footer.socials.map((social) => (
+                <a href={social.url} target="_blank" rel="noreferrer">
+                  <img src={social.logo} alt={social.alt ?? social.name} class="w-10" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div>Download the app now!</div>
+          <div class="flex space-x-4">
+            {
+              footer.download.map((item) => (
+                <a href={item.url} target="_blank" rel="noreferrer">
+                  <img src={item.logo} alt={item.alt ?? item.name} class="h-12 object-contain" />
+                </a>
+              ))
+            }
+          </div>
+          <img src="/footer/shopee-link.png" alt="qr code" class="w-40" />
+        </div>
+      </div>
+      <div>
+        <img src={footer.logo} alt="logo" class="w-24 md:hidden block mt-2 sm:mt-0" />
+        <div class="flex gap-8 flex-col md:flex-row">
+          {
+            footer.links.map((link) => (
+              <div class="space-y-4">
+                <div class="text-gray-500">{link.title}</div>
+                {link.items.map((item) => (
+                  <a
+                    href={item.url}
+                    class="block hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto border-t text-center text-gray-500 text-sm p-8">
+      <p>Copyright © Shopee Limited . Trademarks belong to their respective owners. All rights reserved.</p>
+      <div>
+        <a href="https://help.shopee.ph/portal/article/133983" class="footer-link" target="_blank" rel="noreferrer">
+          Terms of Service
+        </a>
+        |
+        <a
+          href="https://help.shopee.ph/portal/article/77307?gclid=Cj0KCQjwxuCnBhDLARIsAB-cq1pM23WCSrVAx9Me_e3mvq5_kbatXUfaY0w-gIA0e_AcJ3odAIKTY8UaAk9FEALw_wcB"
+          class="footer-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

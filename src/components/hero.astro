@@ -1,0 +1,33 @@
+---
+import footer from "../configs/footer";
+import { Image } from "astro:assets";
+import hero from "../assets/hero.jpg";
+---
+
+<div class="w-screen relative overflow-hidden selection:bg-white selection:text-primary">
+  <Image src={hero} alt="Spay" class="object-cover w-full h-full md:h-[calc(100vh-4rem)]" />
+  <div
+    class="md:absolute w-full md:w-2/3 lg:w-1/3 right-0 p-12 bg-primary text-white md:top-1/2 md:transform md:-translate-y-1/2 space-y-4"
+  >
+    <h1 class="text-4xl">WELCOME TO SHOPEEPAY</h1>
+    <p>
+      Experience convenient and rewarding digital payment services with ShopeePay. Shop on Shopee, Scan to Pay, Pay
+      Online and Send Money in just a few taps.
+    </p>
+    <p>Download the Shopee app now to activate and verify your ShopeePay account.</p>
+    <p>Download the Shopee app now!</p>
+    <div class="flex space-x-4">
+      {
+        footer.download.map((item) => (
+          <a href={item.url} target="_blank" rel="noreferrer">
+            <img src={item.logo} alt={item.alt ?? item.name} class="h-8 object-contain" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+<div
+  class="hidden md:block absolute top-0 left-0 bg-primary w-80 h-screen rotate-[15deg] translate-x-[-16rem] translate-y-[-6rem]"
+>
+</div>

@@ -1,5 +1,6 @@
 ---
 import { type Footer } from "../types";
+import LanguagePicker from "../components/language-picker.astro";
 
 interface Props {
   footer: Footer;
@@ -59,6 +60,10 @@ const { footer } = Astro.props;
               </div>
             ))
           }
+        </div>
+        <div class="space-y-4 mt-4">
+          <div class="text-gray-500">Language</div>
+          <LanguagePicker />
         </div>
       </div>
     </div>

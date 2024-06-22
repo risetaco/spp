@@ -1,4 +1,7 @@
+import { ui, defaultLang } from "../i18n/ui";
+
 type Menu = {
+  lang?: keyof (typeof ui)[typeof defaultLang];
   title?: string;
   url?: string;
   type?: "link" | "button" | "separator";

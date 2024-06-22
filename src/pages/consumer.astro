@@ -1,0 +1,42 @@
+---
+import { Picture } from "astro:assets";
+import Layout from "../layouts/main.astro";
+import customerHero from "../assets/customer.jpg";
+import TabBar from "../components/tab-bar";
+import Feature from "../components/feature.astro";
+import features from "../configs/features";
+---
+
+<Layout>
+  <div class="w-screen relative overflow-hidden">
+    <Picture src={customerHero} alt="Spay" class="object-cover w-full h-[360px] md:h-[480px]" />
+    <div class="absolute inset-0 to-transparent bg-gradient-to-t from-neutral-600 to-80%"></div>
+    <div class="absolute w-full bottom-6 inset-x-0 p-12 text-white space-y-8">
+      <p class="font-bold text-4xl text-white text-center">Consumer</p>
+    </div>
+  </div>
+  <div>
+    <TabBar
+      client:visible
+      headerContainerClassName="justify-between sm:justify-center shadow-md bg-gray-100"
+      headerButtonClassName="w-full sm:w-auto py-6 hover:bg-gray-200"
+      header={[
+        { slot: "feature", label: "ShopeePay Features" },
+        { slot: "pay", label: "Pay With ShopeePay" },
+      ]}
+    >
+      <Fragment slot="feature">
+        <div class="container mx-auto p-4">
+          <h2 class="text-4xl font-bold text-center">ShopeePay Features</h2>
+          <Feature features={features.slice(0, 2)} />
+        </div>
+      </Fragment>
+      <Fragment slot="pay">
+        <div class="container mx-auto p-4">
+          <h2 class="text-4xl font-bold text-center">Pay With ShopeePay</h2>
+          <Feature features={features} />
+        </div>
+      </Fragment>
+    </TabBar>
+  </div>
+</Layout>

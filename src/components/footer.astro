@@ -1,5 +1,12 @@
 ---
-import footer from "../configs/footer";
+import { type Footer } from "../types";
+import LanguagePicker from "../components/language-picker.astro";
+
+interface Props {
+  footer: Footer;
+}
+
+const { footer } = Astro.props;
 ---
 
 <footer class="border-t border-gray-200 py-4">
@@ -53,6 +60,10 @@ import footer from "../configs/footer";
               </div>
             ))
           }
+        </div>
+        <div class="space-y-4 mt-4">
+          <div class="text-gray-500">Language</div>
+          <LanguagePicker />
         </div>
       </div>
     </div>

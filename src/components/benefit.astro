@@ -8,7 +8,7 @@ import benefits from "../configs/benefits";
     {
       benefits.map((benefit) => (
         <div class="bg-white p-8 hover:shadow-md rounded-lg flex sm:flex-col items-center gap-2">
-          <img src={benefit.icon} alt="icon" class="w-20 h-20 mx-auto" />
+          <img src={benefit.icon} alt="icon" class="w-20 h-20 mx-auto aspect-square object-cover" />
           <div class="text-left sm:text-center flex-grow">
             <h3 class="text-xl mt-4">{benefit.title}</h3>
             <p class="mt-2 text-gray-500">{benefit.description}</p>

@@ -1,9 +1,19 @@
 ---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils";
+import { type Menu } from "../types";
 import NavbarMenu from "./navbar-menu";
-import menu from "../configs/menus";
+
+interface Props {
+  menu: Menu[];
+}
+const { menu } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+const currentPath = pathname.replace(`/${lang}`, "").split("/")[1];
 ---
 
 <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-10">
@@ -11,19 +21,19 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <a href="/">
       <img src="/spay.svg" alt="SPay" />
     </a>
-    <ul class="space-x-8 hidden md:flex items-center">
+    <ul class="gap-8 hidden md:flex items-center">
       {
         menu
           .filter((item) => item.type !== "separator")
           .map((item) => (
             <li
               class:list={[
-                "hover:text-primary cursor-pointer",
+                "hover:text-primary cursor-pointer whitespace-nowrap",
                 { "text-primary": currentPath === item.url?.slice(1) },
                 { "bg-orange-600 rounded-full px-4 py-2 text-white": item.type === "button" },
               ]}
             >
-              <a href={item.url}>{item.title}</a>
+              <a href={translatePath(item.url ?? "")}>{t(item.lang) ?? item.title}</a>
             </li>
           ))
       }

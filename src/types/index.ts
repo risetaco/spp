@@ -1,4 +1,7 @@
+import { ui, defaultLang } from "../i18n/ui";
+
 type Menu = {
+  lang?: keyof (typeof ui)[typeof defaultLang];
   title?: string;
   url?: string;
   type?: "link" | "button" | "separator";
@@ -47,4 +50,9 @@ type Feature = {
   icon: string;
 };
 
-export type { Menu, Benefit, GetStarted, Footer, Feature };
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+export type { Menu, Benefit, GetStarted, Footer, Feature, FAQ };

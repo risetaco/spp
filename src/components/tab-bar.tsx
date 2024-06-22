@@ -67,14 +67,7 @@ const TabBar = (props: TabBarProps) => {
           </button>
         ))}
       </div>
-      <div>
-        {Object.keys(rest).map((key) => {
-          if (key === active) {
-            return rest[key];
-          }
-          return null;
-        })}
-      </div>
+      <div>{rest[active]}</div>
     </div>
   );
 };

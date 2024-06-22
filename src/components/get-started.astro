@@ -14,11 +14,13 @@ import getStarted from "../configs/get-started";
             {benefit.description}
           </p>
           <a
+            aria-label={benefit.alt ?? "Learn more"}
             href={benefit.url}
             target="_blank"
             class="bg-primary text-white px-4 py-2 rounded-full mt-4 block text-center hover:bg-opacity-80 transition-colors duration-300"
           >
             {benefit.cta ?? "Learn more"}
+            <span class="sr-only">{benefit.alt}</span>
           </a>
         </div>
       ))

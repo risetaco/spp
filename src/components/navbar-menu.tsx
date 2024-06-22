@@ -56,7 +56,11 @@ const NavbarMenu = ({ menus }: { menus: Menu[] }) => {
 
   return (
     <>
-      <button onClick={handleClick} className="flex flex-col justify-center items-center block md:hidden">
+      <button
+        onClick={handleClick}
+        className="flex flex-col justify-center items-center block md:hidden"
+        aria-label="Menu"
+      >
         <span
           className={cn(
             "bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm",

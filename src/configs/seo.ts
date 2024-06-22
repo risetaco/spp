@@ -7,14 +7,14 @@ const seo: SeoProps = {
     "Mulai dari pembayaran belanja online di aplikasi Shopee sampai pembayaran offline di Merchant ShopeePay, ShopeePay adalah fitur uang elektronik terdepan. Nikmati beragam keuntungan, seperti Cashback, transfer saldo yang cepat dan mudah hingga Voucher ShopeePay yang dapat digunakan untuk pembelanjaan berikutnya!",
   titleTemplate: "%s | ShopeePay | Metode Pembayaran #1 Belanja Online",
   languageAlternates: [
-    { hrefLang: "en", href: "https://shopeepay.com" },
-    { hrefLang: "id", href: "https://shopeepay.co.id" },
-    { hrefLang: "vn", href: "https://shopeepay.vn" },
-    { hrefLang: "th", href: "https://shopeepay.co.th" },
-    { hrefLang: "ph", href: "https://shopeepay.ph" },
-    { hrefLang: "my", href: "https://shopeepay.com.my" },
-    { hrefLang: "sg", href: "https://shopeepay.sg" },
-    { hrefLang: "br", href: "https://shopeepay.com.br" },
+    { hrefLang: "en-EN", href: "https://shopeepay.com" },
+    { hrefLang: "id-ID", href: "https://shopeepay.co.id" },
+    { hrefLang: "vi-VN", href: "https://shopeepay.vn" },
+    { hrefLang: "th-TH", href: "https://shopeepay.co.th" },
+    { hrefLang: "vi-VN", href: "https://shopeepay.ph" },
+    { hrefLang: "en-MY", href: "https://shopeepay.com.my" },
+    { hrefLang: "en-SG", href: "https://shopeepay.sg" },
+    { hrefLang: "br-PT", href: "https://shopeepay.com.br" },
   ],
   openGraph: {
     basic: {

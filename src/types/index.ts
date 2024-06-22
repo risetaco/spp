@@ -19,6 +19,7 @@ type GetStarted = {
   url: string;
   icon: string;
   cta?: string;
+  alt?: string;
 };
 
 type Footer = {

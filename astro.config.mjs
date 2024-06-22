@@ -6,10 +6,11 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   output: "static",
   integrations: [tailwind(), react(), mdx()],
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "fr", "id"]
-  }
+    locales: ["en", "fr", "id"],
+  },
 });

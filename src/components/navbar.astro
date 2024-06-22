@@ -33,7 +33,9 @@ const currentPath = pathname.replace(`/${lang}`, "").split("/")[1];
                 { "bg-orange-600 rounded-full px-4 py-2 text-white": item.type === "button" },
               ]}
             >
-              <a href={translatePath(item.url ?? "")}>{t(item.lang) ?? item.title}</a>
+              <a data-astro-prefetch href={translatePath(item.url ?? "")}>
+                {t(item.lang) ?? item.title}
+              </a>
             </li>
           ))
       }

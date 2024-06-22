@@ -5,8 +5,17 @@ import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
 import footer from "../configs/footer";
 import menu from "../configs/menus";
+import Seo from "../components/seo/seo.astro";
+import seoConfig from "../configs/seo";
 
 const lang = getLangFromUrl(Astro.url);
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const seoProps = { ...seoConfig, title };
 ---
 
 <html lang={lang}>
@@ -15,7 +24,8 @@ const lang = getLangFromUrl(Astro.url);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+
+    <Seo {...seoProps} />
   </head>
   <body>
     <Navbar menu={menu} />

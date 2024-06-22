@@ -18,6 +18,14 @@ const menu: Menu[] = [
     url: "/help-center",
   },
   {
+    title: "Consumer",
+    url: "/consumer",
+  },
+  {
+    title: "FAQ",
+    url: "/faq",
+  },
+  {
     type: "separator",
   },
   {

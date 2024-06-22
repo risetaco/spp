@@ -3,7 +3,7 @@ import NavbarMenu from "./navbar-menu";
 import menu from "../configs/menus";
 
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+const currentPath = pathname.split("/")?.[1];
 ---
 
 <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-10">

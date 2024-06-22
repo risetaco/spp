@@ -1,5 +1,11 @@
 ---
-import footer from "../configs/footer";
+import { type Footer } from "../types";
+
+interface Props {
+  footer: Footer;
+}
+
+const { footer } = Astro.props;
 ---
 
 <footer class="border-t border-gray-200 py-4">

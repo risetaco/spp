@@ -1,5 +1,11 @@
 ---
-import features from "../configs/features";
+import { type Feature } from "../types";
+
+interface Props {
+  features: Feature[];
+}
+
+const { features } = Astro.props;
 ---
 
 <div class="p-8">

@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
+import footer from "../configs/footer";
 ---
 
 <html lang="en">
@@ -16,6 +17,6 @@ import Footer from "../components/footer.astro";
     <main class="mt-16 selection:bg-primary selection:text-white">
       <slot />
     </main>
-    <Footer />
+    <Footer footer={footer} />
   </body>
 </html>

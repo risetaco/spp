@@ -47,4 +47,9 @@ type Feature = {
   icon: string;
 };
 
-export type { Menu, Benefit, GetStarted, Footer, Feature };
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+export type { Menu, Benefit, GetStarted, Footer, Feature, FAQ };
